@@ -10,8 +10,6 @@ public interface IClientes {
 
 	List<Cliente> get();
 
-	
-
 	void insertar(Cliente cliente) throws OperationNotSupportedException;
 
 	Cliente buscar(Cliente cliente);

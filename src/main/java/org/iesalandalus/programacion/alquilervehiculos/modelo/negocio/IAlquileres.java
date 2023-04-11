@@ -17,7 +17,6 @@ public interface IAlquileres {
 
 	List<Alquiler> get(Cliente cliente);
 
-
 	boolean comprobarAlquiler(Alquiler alquiler);
 
 	void insertar(Alquiler alquiler) throws OperationNotSupportedException;
@@ -29,9 +28,5 @@ public interface IAlquileres {
 	void borrar(Alquiler alquiler) throws OperationNotSupportedException;
 
 	Alquiler[] get();
-
-
-
-	
 
 }
