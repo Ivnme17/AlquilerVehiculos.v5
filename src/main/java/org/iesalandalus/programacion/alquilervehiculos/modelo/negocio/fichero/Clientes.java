@@ -130,35 +130,33 @@ public class Clientes implements IClientes {
 	}
 
 	private void crearDom() {
-	    try {
-	        DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
-	        DocumentBuilder builder = factory.newDocumentBuilder();
-	        Document documento = builder.newDocument();
+		try {
+			DocumentBuilderFactory factory = DocumentBuilderFactory.newInstance();
+			DocumentBuilder builder = factory.newDocumentBuilder();
+			Document documento = builder.newDocument();
 
-	        Element raiz = documento.createElement(RAIZ);
-	        documento.appendChild(raiz);
+			Element raiz = documento.createElement(RAIZ);
+			documento.appendChild(raiz);
 
-	        for (Cliente cliente : coleccionClientes) {
-	            Element elementoCliente = documento.createElement("cliente");
-	            elementoCliente.setAttribute("dni", cliente.getDni());
-	            elementoCliente.setAttribute("nombre", cliente.getNombre());
-	            elementoCliente.setAttribute("telefono", cliente.getTelefono());
-	            raiz.appendChild(elementoCliente);
-	        }
+			for (Cliente cliente : coleccionClientes) {
+				Element elementoCliente = documento.createElement("cliente");
+				elementoCliente.setAttribute("dni", cliente.getDni());
+				elementoCliente.setAttribute("nombre", cliente.getNombre());
+				elementoCliente.setAttribute("telefono", cliente.getTelefono());
+				raiz.appendChild(elementoCliente);
+			}
 
-	        TransformerFactory transformerFactory = TransformerFactory.newInstance();
-	        Transformer transformer = transformerFactory.newTransformer();
-	        transformer.setOutputProperty(OutputKeys.INDENT, "yes");
-	        transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
-	        DOMSource source = new DOMSource(documento);
-	        StreamResult result = new StreamResult(FICHERO_CLIENTES);
-	        transformer.transform(source, result);
-	    } catch (Exception e) {
-	        System.out.println("Error al crear el archivo de clientes: " + e.getMessage());
-	    }
+			TransformerFactory transformerFactory = TransformerFactory.newInstance();
+			Transformer transformer = transformerFactory.newTransformer();
+			transformer.setOutputProperty(OutputKeys.INDENT, "yes");
+			transformer.setOutputProperty(OutputKeys.ENCODING, "UTF-8");
+			DOMSource source = new DOMSource(documento);
+			StreamResult result = new StreamResult(FICHERO_CLIENTES);
+			transformer.transform(source, result);
+		} catch (Exception e) {
+			System.out.println("Error al crear el archivo de clientes: " + e.getMessage());
+		}
 	}
-
-
 
 	private Element getElemento(Document documento, String etiqueta, String valor) {
 		NodeList lista = documento.getElementsByTagName(etiqueta);
