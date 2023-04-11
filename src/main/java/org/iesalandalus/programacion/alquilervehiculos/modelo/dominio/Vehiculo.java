@@ -113,4 +113,18 @@ public abstract class Vehiculo {
 
 	protected abstract int getCilindrada();
 
+
+	public static Vehiculo[] get() {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+
+	public static void insertar(Turismo turismo) {
+		// TODO Auto-generated method stub
+		
+	}
+
+
+
 }

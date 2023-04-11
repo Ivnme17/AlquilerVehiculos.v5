@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.IVehiculos;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.IVehiculos;
 
 public class Autobus extends Vehiculo {
 private int FACTOR_PLAZAS;

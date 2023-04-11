@@ -1,7 +1,7 @@
 package org.iesalandalus.programacion.alquilervehiculos.modelo.dominio;
 
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.Vehiculos;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.IVehiculos;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.IVehiculos;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.fichero.Vehiculos;
 
 public class Furgoneta extends Vehiculo{
 private int FACTOR_PMA;

@@ -12,10 +12,10 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Vehiculo;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.IAlquileres;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.IClientes;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.Vehiculos;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.Alquileres;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.Clientes;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.IVehiculos;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.IVehiculos;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.fichero.Alquileres;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.fichero.Clientes;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.fichero.Vehiculos;
 
 public class Modelo {
 	private IClientes clientes;
@@ -40,8 +40,8 @@ public class Modelo {
 		clientes.insertar(new Cliente(cliente));
 	}
 
-	public void insertar(Turismo turismo) throws OperationNotSupportedException {
-		vehiculos.insertar(new Turismo(turismo));
+	public void insertar(Vehiculo vehiculo) throws OperationNotSupportedException {
+		Vehiculo.insertar(new Turismo(vehiculo));
 	}
 
 	public void insertar(Alquiler alquiler) throws OperationNotSupportedException {
@@ -69,8 +69,8 @@ public class Modelo {
 	}
 
 	public Vehiculo buscar(Vehiculos vehiculo) {
-		Vehiculo vehiculoBuscado = vehiculos.buscar(vehiculo);
-		return (vehiculoBuscado == null) ? null : new Vehiculo(vehiculoBuscado);
+		Vehiculo vehiculoBuscado = vehiculo.buscar(vehiculo);
+		return (vehiculoBuscado == null) ? null : new vehiculo(vehiculoBuscado);
 	}
 
 	public Alquiler buscar(Alquiler alquiler) {
@@ -102,7 +102,7 @@ public class Modelo {
 		for (Alquiler alquilerAux : alquileres.get(vehiculo)) {
 			borrar(alquilerAux);
 		}
-		vehiculos.borrar(vehiculo);
+		vehiculo.borrar(vehiculo);
 	}
 
 	public void borrar(Alquiler alquiler) throws OperationNotSupportedException {
@@ -117,12 +117,12 @@ public class Modelo {
 		return listaCliente;
 	}
 
-	public List<Turismo> getTurismos() {
-		List<Turismo> listaTurismo = new ArrayList<>();
-		for (Vehiculo turismo : vehiculos.get()) {
-			listaTurismo.add(new Turismo(turismo));
+	public List<Vehiculo> getVehiculo() {
+		List<Vehiculo> listaVehiculo = new ArrayList<>();
+		for (Vehiculo turismo : Vehiculo.get()) {
+			listaVehiculo.add(new Turismo(turismo));
 		}
-		return listaTurismo;
+		return listaVehiculo;
 	}
 
 	public List<Alquiler> getAlquileres() {
@@ -147,12 +147,6 @@ public class Modelo {
 			alquilerArray.add(new Alquiler(alquilerAux));
 		}
 		return alquilerArray;
-	}
-
-
-	public List<Vehiculo> getVehiculos() {
-		// TODO Auto-generated method stub
-		return null;
 	}
 
 }

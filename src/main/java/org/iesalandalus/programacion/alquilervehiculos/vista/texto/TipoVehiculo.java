@@ -1,6 +1,6 @@
 package org.iesalandalus.programacion.alquilervehiculos.vista.texto;
 
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.IVehiculos;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.IVehiculos;
 
 public enum TipoVehiculo {
 TURISMO , AUTOBUS , FURGONETA;

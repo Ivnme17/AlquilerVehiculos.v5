@@ -47,7 +47,7 @@ public class Cliente {
 		return dni.charAt(8) == CalcularLetra;
 
 	}
-
+		
 	public String getNombre() {
 		return nombre;
 	}
@@ -99,4 +99,26 @@ public class Cliente {
 		return new Cliente(null, dni, null);
 
 	}
+
+	@Override
+	public String toString() {
+		return String.format("Cliente [nombre=%s, telefono=%s, dni=%s]", nombre, telefono, dni);
+	}
+
+	@Override
+	public int hashCode() {
+		return Objects.hash(dni, nombre, telefono);
+	}
+
+	@Override
+	public boolean equals(Object obj) {
+		if (this == obj)
+			return true;
+		if (!(obj instanceof Cliente))
+			return false;
+		Cliente other = (Cliente) obj;
+		return Objects.equals(dni, other.dni) && Objects.equals(nombre, other.nombre)
+				&& Objects.equals(telefono, other.telefono);
+	}
+	
 }

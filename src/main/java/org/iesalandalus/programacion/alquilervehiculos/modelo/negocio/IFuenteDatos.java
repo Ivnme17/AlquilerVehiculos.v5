@@ -1,8 +1,7 @@
 package org.iesalandalus.programacion.alquilervehiculos.modelo.negocio;
 
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.Alquileres;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.Clientes;
-import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.memoria.IVehiculos;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.fichero.Alquileres;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.fichero.Clientes;
 
 public interface IFuenteDatos {
 

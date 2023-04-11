@@ -9,6 +9,7 @@ import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Alquiler;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Cliente;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Turismo;
 import org.iesalandalus.programacion.alquilervehiculos.modelo.dominio.Vehiculo;
+import org.iesalandalus.programacion.alquilervehiculos.modelo.negocio.fichero.Vehiculos;
 
 public interface IAlquileres {
 
@@ -16,7 +17,6 @@ public interface IAlquileres {
 
 	List<Alquiler> get(Cliente cliente);
 
-	int getCantidad();
 
 	boolean comprobarAlquiler(Alquiler alquiler);
 
@@ -27,6 +27,8 @@ public interface IAlquileres {
 	Alquiler buscar(Alquiler alquiler);
 
 	void borrar(Alquiler alquiler) throws OperationNotSupportedException;
+
+	Alquiler[] get();
 
 
 
