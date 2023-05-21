@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <AnchorPane prefHeight="407.0" prefWidth="600.0">
+         <children>
+            <TableView fx:id="TablaBuscarAlquiler" layoutX="38.0" layoutY="53.0" prefHeight="274.0" prefWidth="524.0">
+              <columns>
+                <TableColumn fx:id="tcClienteAlquiler" prefWidth="75.0" text="Cliente" />
+                <TableColumn fx:id="tcVehiculoAlquiler" prefWidth="75.0" text="Vehiculo" />
+                  <TableColumn fx:id="tcFechaAlquiler" prefWidth="75.0" text="FechAlquiler" />
+                  <TableColumn fx:id="tcFechaDevolucion" prefWidth="119.199951171875" text="FechDevolucion" />
+              </columns>
+            </TableView>
+            <TextField fx:id="tfBuscar" layoutX="109.0" layoutY="14.0" onAction="#Buscar" prefHeight="25.0" prefWidth="452.0" />
+            <Label layoutX="65.0" layoutY="18.0" prefHeight="17.0" prefWidth="44.0" text="Buscar : " />
+         </children>
+      </AnchorPane>
+   </children>
+</VBox>

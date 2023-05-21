@@ -6,7 +6,7 @@ public abstract class Vehiculo {
 
 	private static String ER_MARCA = ("(^[A-Z][a-z]+)|(^[A-Z][a-z]+\s[A-Z][a-z]+)|(^[A-Z]+)|(^[A-Z][a-z]+-[A-Z][a-z]+)|(^[A-Z][a-z]+[A-Z][a-z]+)");
 	private static String ER_MATRICULA = "[0-9]{4}[BCDFGHJKLMNÑPQRSTVWXYZ]{3}";
-	private String marca;
+	private static String marca;
 	private String modelo;
 	protected String matricula;
 	
@@ -17,7 +17,7 @@ public abstract class Vehiculo {
 	}
 
 	
-	public String getMarca() {
+	public static String getMarca() {
 		return marca;
 	}
 	public static Vehiculo copiar(Vehiculo vehiculo) {
@@ -44,7 +44,7 @@ public abstract class Vehiculo {
 		return matricula;
 	}
 
-	private void setMarca(String marca) {
+	public void setMarca(String marca) {
 		if (marca == null) {
 			throw new NullPointerException("ERROR: La marca no puede ser nula.");
 		}
@@ -54,7 +54,7 @@ public abstract class Vehiculo {
 		this.marca = marca;
 	}
 
-	private void setModelo(String modelo) {
+	public void setModelo(String modelo) {
 		if (modelo == null) {
 	        throw new NullPointerException("ERROR: El modelo no puede ser nulo.");
 	    }

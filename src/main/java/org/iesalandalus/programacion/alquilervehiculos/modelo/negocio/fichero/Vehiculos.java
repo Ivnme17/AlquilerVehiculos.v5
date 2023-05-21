@@ -39,7 +39,7 @@ public abstract class Vehiculos implements IVehiculos {
 	private String AUTOBUS;
 	private String FURGONETA;
 
-	private List<Vehiculo> coleccionVehiculos;
+	private static List<Vehiculo> coleccionVehiculos;
 
 	public Vehiculos() {
 		this.coleccionVehiculos = new ArrayList<>();
@@ -74,7 +74,7 @@ public abstract class Vehiculos implements IVehiculos {
 		}
 	}
 
-	private Vehiculo getVehiculo(Element elementoVehiculo) throws OperationNotSupportedException {
+	public Vehiculo getVehiculo(Element elementoVehiculo) throws OperationNotSupportedException {
 		String marca = elementoVehiculo.getAttribute(MARCA);
 		String modelo = elementoVehiculo.getAttribute(MODELO);
 		String matricula = elementoVehiculo.getAttribute(MATRICULA);
@@ -190,6 +190,10 @@ public abstract class Vehiculos implements IVehiculos {
 		if (!coleccionVehiculos.remove(vehiculo)) {
 			throw new OperationNotSupportedException("ERROR: No existe ningún turismo con esa matrícula.");
 		}
+	}
+
+	public static void clear() {
+		coleccionVehiculos.clear();		
 	}
 
 }

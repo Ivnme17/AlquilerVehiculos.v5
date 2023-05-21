@@ -23,9 +23,8 @@ public class Modelo {
 	private IVehiculos vehiculos;
 
 	public Modelo() {
- }
+	}
 
-	
 	public void comenzar() {
 		clientes = new Clientes();
 		vehiculos = new Vehiculos();

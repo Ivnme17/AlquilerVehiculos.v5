@@ -158,7 +158,7 @@ public class Clientes implements IClientes {
 		}
 	}
 
-	private Element getElemento(Document documento, String etiqueta, String valor) {
+	public static Element getElemento(Document documento, String etiqueta, String valor) {
 		NodeList lista = documento.getElementsByTagName(etiqueta);
 		for (int i = 0; i < lista.getLength(); i++) {
 			Element elemento = (Element) lista.item(i);

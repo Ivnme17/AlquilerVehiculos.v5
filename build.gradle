@@ -7,16 +7,21 @@
  */
 
 plugins {
-    // Apply the java-library plugin for API and implementation separation.
-    id 'java'
+    id 'application'
+    id 'org.openjfx.javafxplugin' version '0.0.13'
 }
 
 repositories {
     // Use Maven Central for resolving dependencies.
     mavenCentral()
-    
+
     // Repositorio jitpack.io donde están los accesos a las versiones de la librería entrada desde github
-    maven { url 'https://jitpack.io' }
+    maven { url 'https://jitpack.io/' }
+}
+
+javafx {
+    version = "17"
+    modules = [ 'javafx.controls', 'javafx.fxml' ]
 }
 
 dependencies {
@@ -24,10 +29,10 @@ dependencies {
     testImplementation 'org.junit.jupiter:junit-jupiter:5.9.1'
     testImplementation 'org.junit.platform:junit-platform-suite-api:1.9.1'
     testRuntimeOnly 'org.junit.platform:junit-platform-suite-engine:1.9.1'
-    
+
     // Mockito
     testImplementation "org.mockito:mockito-core:+"
-      
+
     // Entrada para que el repositorio jitpack.io sepa acceder a la localización de librería entrada
     implementation 'com.github.JRJimenezReyes:entrada:1.0.3'
 }
@@ -42,10 +47,11 @@ apply plugin: 'application'
 mainClassName = 'org.iesalandalus.programacion.alquilervehiculos.MainApp'
 
 jar {
-	manifest {
-		attributes 'Main-Class': 'org.iesalandalus.programacion.alquilervehiculos.MainApp'
-	}
-	from {
-		configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } 
-	}
+    manifest {
+        duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+        attributes 'Main-Class': 'org.iesalandalus.programacion.alquilervehiculos.MainApp'
+    }
+    from {
+        configurations.runtimeClasspath.collect { it.isDirectory() ? it : zipTree(it) } 
+    }
 }

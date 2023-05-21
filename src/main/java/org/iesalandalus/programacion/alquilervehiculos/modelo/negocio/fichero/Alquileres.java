@@ -77,7 +77,7 @@ public class Alquileres implements IAlquileres {
 		}
 	}
 
-	private void getAlquiler() {
+	public void getAlquiler() {
 		try {
 			DocumentBuilderFactory dbf = DocumentBuilderFactory.newInstance();
 			DocumentBuilder db = dbf.newDocumentBuilder();

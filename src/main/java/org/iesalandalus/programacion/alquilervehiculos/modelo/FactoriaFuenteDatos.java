@@ -9,6 +9,12 @@ MEMORIA{
 		public IFuenteDatos crear(){
 			return new FuenteDatosFicheros();
 		}
+}, FICHEROS {
+	@Override
+	public IFuenteDatos crear() {
+		// TODO Auto-generated method stub
+		return null;
+	}
 };
 
 public abstract IFuenteDatos crear();

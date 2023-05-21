@@ -47,7 +47,7 @@ public class Cliente {
 		return dni.charAt(8) == CalcularLetra;
 
 	}
-		
+
 	public String getNombre() {
 		return nombre;
 	}
@@ -120,5 +120,5 @@ public class Cliente {
 		return Objects.equals(dni, other.dni) && Objects.equals(nombre, other.nombre)
 				&& Objects.equals(telefono, other.telefono);
 	}
-	
+
 }
